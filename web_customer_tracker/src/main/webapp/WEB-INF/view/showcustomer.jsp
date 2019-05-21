@@ -6,11 +6,13 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link href="${pageContext.request.contextPath}/resources/css/abc.css" type="text/css" rel="stylesheet">
+
 </head>
 <body>
-hello customer
+<h1>Hello customer</h1><br>
 
-
+<div id="main">
 
 <table>
 
@@ -33,6 +35,6 @@ hello customer
 
 </table>
 
-
+</div>
 </body>
 </html>
