@@ -66,10 +66,10 @@ Customer thecustomer=session.get(Customer.class,theid);
 
 
 		Session session=sessionfactory.getCurrentSession();
-		
+		String qr="from Customer s where upper(s.lastname) like :searchField OR upper(s.firstname) like :searchField OR upper(s.email) like :searchField OR upper(s.id) like :searchField";
 		Query<Customer> query=null;
 		try {
-			query=session.createQuery("from Customer s where s.lastname like :searchField OR s.firstname like :searchField OR s.email like :searchField OR s.id like :searchField");
+			query=session.createQuery(qr);
 		
 		 query.setParameter("searchField", "%" + thekey + "%");
 		 

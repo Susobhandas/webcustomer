@@ -114,7 +114,7 @@ public class CustomerController {
 			//@RequestMapping("/Customerdetails")
 			//public String showCustomer(Model themodle) {
 				
-				List<Customer> thecustomerlist=customerService.getCustomerSearch(thekey);
+				List<Customer> thecustomerlist=customerService.getCustomerSearch(thekey.toUpperCase());
 				
 				themodle.addAttribute("customerlist",thecustomerlist);
 				
