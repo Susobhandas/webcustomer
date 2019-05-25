@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="Customer")
@@ -22,13 +24,18 @@ public class Customer {
 	
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="cust_seq")
 	private int id;
-	
+	@NotNull(message="Field Required")
+	@Size(min=1,message="Please Enter First name")
 	@Column(name="first_name")
 	private String firstname;
 	
+	@NotNull(message="Field Required")
+	@Size(min=1,message="Please Enter Last name")
 	@Column(name="last_name")
 	private String lastname;
 	
+	@NotNull(message="Field Required")
+	@Size(min=1,message="Please Enter Email")
 	@Column(name="email")
 	private String email;
 
